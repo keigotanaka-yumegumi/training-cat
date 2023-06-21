@@ -10,7 +10,7 @@ body{
 
 p{
   font-size: $fs;
-  $font-family:'Noto Serif JP', serif;
+  font-family:$font-family;
   color: $color-tea;
 }
 
