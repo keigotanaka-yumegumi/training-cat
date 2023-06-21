@@ -3,9 +3,6 @@
 # global
 =============================================== */
 /* ===============================================
-# フォント
-=============================================== */
-/* ===============================================
 # フォントサイズ
 =============================================== */
 /* ===============================================
@@ -13,9 +10,6 @@
 =============================================== */
 /* ===============================================
 # base
-=============================================== */
-/* ===============================================
-# フォント
 =============================================== */
 /* ===============================================
 # フォントサイズ
@@ -31,10 +25,18 @@ body {
   height: 100%;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
 p {
   font-size: 16px;
   font-family: "Noto Sans JP", sans-serif;
   color: #341E12;
+}
+
+span {
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 ul {
@@ -51,13 +53,16 @@ a:hover {
 
 .container {
   padding: 0 20px;
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 800px) {
+  .container {
+    margin-bottom: 80px;
+  }
 }
 
 /* ===============================================
 # parts（パーツ）
-=============================================== */
-/* ===============================================
-# フォント
 =============================================== */
 /* ===============================================
 # フォントサイズ
@@ -77,28 +82,22 @@ a:hover {
   #header .header--first {
     flex-direction: column;
     gap: 0;
+    padding-bottom: 30px;
   }
-}
-#header .header--first .logo {
-  flex-grow: 1;
-  max-width: 424px;
-  width: 40%;
 }
 @media screen and (max-width: 800px) {
   #header .header--first .logo {
     width: 100%;
+    padding: 0 20px;
   }
 }
 #header .header--first .logo img {
   width: 100%;
 }
-#header .header--first .meaning {
-  flex-grow: 1;
-  width: 60%;
-}
 @media screen and (max-width: 800px) {
   #header .header--first .meaning {
     width: 100%;
+    padding: 0 20px;
   }
 }
 #header .header--first .meaning > div {
@@ -114,6 +113,18 @@ a:hover {
     padding: 30px 0;
   }
 }
+@media screen and (max-width: 800px) {
+  #header .header--first .meaning > div {
+    max-width: 100%;
+    padding: 40px 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  #header .header--first .meaning > div {
+    max-width: 100%;
+    padding: 40px 0;
+  }
+}
 #header .header--first .meaning > div p {
   font-size: 20px;
   line-height: 2rem;
@@ -123,7 +134,7 @@ a:hover {
 }
 @media screen and (max-width: 800px) {
   #header .header--last {
-    margin-bottom: 80px;
+    padding-bottom: 30px;
   }
 }
 #header .header--last picture img {
@@ -159,10 +170,103 @@ a:hover {
   top: 18px;
   left: 18px;
 }
+#header .header--last .menu li .menu-list:hover::before {
+  content: url(../image/ico_paw_o.svg);
+}
 
-/* ===============================================
-# フォント
-=============================================== */
+#footer {
+  background: #341E12;
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+}
+#footer img {
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 800px) {
+  #footer img {
+    margin-bottom: 35px;
+  }
+}
+#footer .footer-menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 800px) {
+  #footer .footer-menu {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+}
+#footer .footer-menu li {
+  border-right: solid 1px #fff;
+}
+@media screen and (max-width: 800px) {
+  #footer .footer-menu li {
+    border-right: none;
+    border-top: dotted 2px #fff;
+  }
+}
+#footer .footer-menu li:last-child {
+  border-right: none;
+}
+@media screen and (max-width: 800px) {
+  #footer .footer-menu li:last-child {
+    border-bottom: dotted 2px #fff;
+  }
+}
+#footer .footer-menu li a {
+  color: #fff;
+  padding: 0 10px;
+  font-size: 12px;
+}
+#footer .footer-menu li a:hover {
+  color: #CEB967;
+}
+@media screen and (max-width: 800px) {
+  #footer .footer-menu li a {
+    font-size: 14px;
+    display: inline-block;
+    padding: 15px 0;
+  }
+}
+#footer .copy {
+  font-size: 12px;
+  color: #fff;
+}
+@media screen and (max-width: 800px) {
+  #footer .copy {
+    margin-bottom: 50px;
+  }
+}
+
+.privacy {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+.privacy.is-open p:first-child {
+  border-right: solid 1px #341E12;
+}
+.privacy.is-open p a {
+  color: #341E12;
+}
+.privacy.is-open p a:hover {
+  color: #A88E25;
+}
+.privacy p:first-child {
+  border-right: solid 1px #fff;
+}
+.privacy p a {
+  color: #fff;
+  padding: 0 10px;
+  font-size: 12px;
+}
+.privacy p a:hover {
+  color: #CEB967;
+}
+
 /* ===============================================
 # フォントサイズ
 =============================================== */
@@ -175,9 +279,10 @@ a:hover {
   border-radius: 50%;
   background: #341E12;
   position: fixed;
-  right: 45px;
+  right: 40px;
   bottom: 45px;
   display: none;
+  z-index: 1000;
 }
 @media screen and (max-width: 800px) {
   .burger {
@@ -186,6 +291,7 @@ a:hover {
 }
 .burger:hover {
   cursor: pointer;
+  background: #CEB967;
 }
 .burger > div {
   position: absolute;
@@ -198,6 +304,7 @@ a:hover {
   height: 2px;
   background: #fff;
   margin-bottom: 7px;
+  transition: 0.3s;
 }
 .burger > p {
   font-size: 12px;
@@ -206,10 +313,22 @@ a:hover {
   top: 43px;
   left: 16px;
 }
+.burger.is-open span:first-of-type {
+  transform: rotate(45deg);
+  position: absolute;
+  top: 9px;
+  transition: 0.3s;
+}
+.burger.is-open span:nth-of-type(2) {
+  display: none;
+}
+.burger.is-open span:last-of-type {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 9px;
+  transition: 0.3s;
+}
 
-/* ===============================================
-# フォント
-=============================================== */
 /* ===============================================
 # フォントサイズ
 =============================================== */
@@ -220,20 +339,530 @@ a:hover {
   width: 100px;
   height: 30px;
   background: #341E12;
+  border-radius: 5px;
+}
+.btn-tea:hover {
+  background: #CEB967;
 }
 .btn-tea a {
+  display: block;
+  padding: 0.5rem 0;
+}
+.btn-tea a span {
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+@media screen and (max-width: 800px) {
+  .btn-tea a span {
+    font-size: 13px;
+  }
+}
+
+/* ===============================================
+# フォントサイズ
+=============================================== */
+/* ===============================================
+# 色
+=============================================== */
+#footer .page_top {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #341E12;
+  position: absolute;
+  top: -50px;
+  right: 40px;
+}
+#footer .page_top:hover {
+  background: #CEB967;
+}
+#footer .page_top .page_top--inner {
   display: inline-block;
+}
+#footer .page_top .page_top--inner::before {
+  content: "";
+  background-image: url("../image/cursor.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin: 10px auto 0 auto;
+  height: 1.5rem;
+  width: 2rem;
+  vertical-align: middle;
+}
+#footer .page_top span {
+  color: #fff;
+  font-size: 12px;
+  display: inline-block;
+}
+
+/* ===============================================
+# フォントサイズ
+=============================================== */
+/* ===============================================
+# 色
+=============================================== */
+#header.is-open,
+main.is-open,
+#footer.is-open {
+  display: none;
+}
+
+.open_menu {
+  display: none;
+  padding: 0 20px;
+}
+.open_menu.is-open {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background: #F5EFD7;
+  text-align: center;
+}
+.open_menu img {
+  margin: 30px auto 35px auto;
+}
+.open_menu ul {
+  margin-bottom: 45px;
+}
+.open_menu li {
+  border-top: dotted 2px #341E12;
+}
+.open_menu li:last-child {
+  border-bottom: dotted 2px #341E12;
+}
+.open_menu li a {
+  display: inline-block;
+  padding: 15px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.burger.is-open {
+  right: 55px;
 }
 
 /* ===============================================
 # pages（ページ）
 =============================================== */
 /* ===============================================
-# フォント
-=============================================== */
-/* ===============================================
 # フォントサイズ
 =============================================== */
 /* ===============================================
 # 色
-=============================================== *//*# sourceMappingURL=style.css.map */
+=============================================== */
+.title {
+  max-width: 1084px;
+  display: flex;
+  align-items: flex-end;
+  margin: 100px auto 40px auto;
+}
+.title img {
+  margin-right: 20px;
+}
+.title .title--inner {
+  width: 100%;
+  border-bottom: 2px solid #CEB967;
+  display: flex;
+  padding-bottom: 7px;
+}
+.title .title--inner h2 {
+  width: 90%;
+  font-size: 30px;
+  font-weight: bold;
+}
+@media screen and (max-width: 800px) {
+  .title .title--inner h2 {
+    font-size: 24px;
+  }
+}
+
+/* ===============================================
+# お知らせ
+=============================================== */
+.news--list {
+  max-width: 1084px;
+  margin: 0 auto;
+}
+.news--list li {
+  display: flex;
+  align-items: center;
+  border-top: dotted 2px #CEB967;
+  padding: 22px 0;
+}
+@media screen and (max-width: 800px) {
+  .news--list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.news--list li:last-child {
+  border-bottom: dotted 2px #CEB967;
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 800px) {
+  .news--list li time {
+    margin-bottom: 10px;
+  }
+}
+.news--list li .icon {
+  width: 92px;
+  text-align: center;
+  margin: 0 15px 0 22px;
+  padding: 4px 0;
+}
+@media screen and (max-width: 800px) {
+  .news--list li .icon {
+    margin: 0 0 10px 0;
+  }
+}
+.news--list li .icon span {
+  font-size: 12px;
+}
+.news--list li .icon-red {
+  background: #F7320E;
+}
+.news--list li .icon-red span {
+  color: #fff;
+}
+.news--list li .icon-cream {
+  background: #F5EFD7;
+}
+.news--list li .icon-cream span {
+  color: #341E12;
+}
+
+/* ===============================================
+# おすすめ商品
+=============================================== */
+.recommendation--list {
+  max-width: 1084px;
+  display: flex;
+  margin: 0 auto;
+  gap: 20px;
+}
+@media screen and (max-width: 800px) {
+  .recommendation--list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.recommendation--list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  width: calc(33.3333333333% - 40px);
+  padding: 15px 20px;
+  border: solid 1px #dddddd;
+  position: relative;
+}
+@media screen and (max-width: 800px) {
+  .recommendation--list li {
+    width: 100%;
+  }
+}
+.recommendation--list li .new-ribbon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 89px;
+  height: 91px;
+  overflow: hidden;
+}
+.recommendation--list li .new {
+  display: inline-block;
+  position: absolute;
+  padding: 7px 0;
+  left: -43px;
+  top: 17px;
+  width: 160px;
+  text-align: center;
+  background: #F7320E;
+  color: #fff;
+  transform: rotate(-45deg);
+}
+.recommendation--list li img {
+  max-width: 318px;
+  max-height: 190px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 800px) {
+  .recommendation--list li img {
+    max-width: 100%;
+    max-height: 400px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .recommendation--list li img {
+    max-height: 250px;
+  }
+}
+.recommendation--list li h3 {
+  font-size: 18px;
+  padding-bottom: 7px;
+  margin-bottom: 20px;
+  border-bottom: dotted 2px #341E12;
+}
+.recommendation--list li > p {
+  line-height: 1.2rem;
+}
+.recommendation--list li .text {
+  font-size: 14px;
+  height: 100%;
+}
+.recommendation--list li .fee {
+  text-align: right;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.recommendation--list li .fee span {
+  font-size: 12px;
+  font-weight: normal;
+}
+.recommendation--list li .btn {
+  border: solid 1px #341E12;
+  text-align: center;
+  border-radius: 5px;
+}
+.recommendation--list li .btn:hover {
+  background: #F5EFD7;
+  border: solid 1px #A88E25;
+}
+.recommendation--list li .btn a {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  padding: 15px 0;
+  color: #341E12;
+}
+.recommendation--list li .btn a span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-top: solid 2px #341E12;
+  border-right: solid 2px #341E12;
+  transform: rotate(45deg);
+  margin-left: 5px;
+}
+.recommendation--list li.is-new::before {
+  content: "";
+  top: 0;
+  left: 0;
+  border-bottom: 5rem solid transparent;
+  border-left: 5rem solid #F7320E;
+  position: absolute;
+  z-index: 100;
+}
+.recommendation--list li.is-new::after {
+  content: "新商品";
+  display: block;
+  top: 20px;
+  left: 4px;
+  position: absolute;
+  transform: rotate(-45deg);
+  color: #fff;
+  z-index: 101;
+}
+
+/* ===============================================
+# 商品カテゴリー
+=============================================== */
+.category .category-list {
+  max-width: 1084px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media screen and (max-width: 800px) {
+  .category .category-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.category .category-list li {
+  width: calc(33.3333333333% - 40px);
+  border: solid 1px #dddddd;
+  flex-grow: 1;
+}
+@media screen and (max-width: 800px) {
+  .category .category-list li {
+    width: 100%;
+  }
+}
+.category .category-list li:hover {
+  background: #F5EFD7;
+  border: solid 1px #A88E25;
+}
+.category .category-list li:last-child {
+  border: none;
+}
+.category .category-list li a {
+  display: block;
+}
+.category .category-list li a div {
+  display: flex;
+  align-items: center;
+}
+.category .category-list li a div img {
+  max-width: 120px;
+}
+.category .category-list li a div p {
+  flex-grow: 1;
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+/* ===============================================
+# 委託販売先
+=============================================== */
+.consignment {
+  padding: 90px 20px 110px 20px;
+  background: #F5EFD7;
+}
+@media screen and (max-width: 800px) {
+  .consignment {
+    padding: 80px 20px;
+  }
+}
+.consignment > h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #341E12;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 800px) {
+  .consignment > h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+}
+.consignment > p {
+  text-align: center;
+  margin-bottom: 80px;
+  line-height: 1.8rem;
+}
+@media screen and (max-width: 800px) {
+  .consignment > p {
+    margin-bottom: 50px;
+  }
+}
+.consignment .consignment--list {
+  max-width: 1084px;
+  margin: 0 auto;
+}
+.consignment .consignment--list li {
+  display: flex;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 800px) {
+  .consignment .consignment--list li {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .consignment .consignment--list li:last-child {
+    margin-bottom: 0;
+  }
+}
+.consignment .consignment--list li img {
+  max-width: 440px;
+  margin-right: 20px;
+}
+@media screen and (max-width: 800px) {
+  .consignment .consignment--list li img {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+}
+.consignment .consignment--list li > div {
+  flex-grow: 1;
+}
+.consignment .consignment--list li h3 {
+  font-size: 20px;
+  font-weight: bold;
+  background: #341E12;
+  color: #fff;
+  height: 44px;
+  padding-top: 12px;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 800px) {
+  .consignment .consignment--list li h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+.consignment .consignment--list li p {
+  margin-bottom: 1.2rem;
+}
+@media screen and (max-width: 800px) {
+  .consignment .consignment--list li p {
+    font-size: 14px;
+  }
+}
+.consignment .consignment--list li p span {
+  font-weight: bold;
+  display: inline-block;
+  width: 100px;
+}
+
+/* ===============================================
+# プロフィール
+=============================================== */
+.profile {
+  padding-top: 90px;
+  text-align: center;
+}
+@media screen and (max-width: 800px) {
+  .profile {
+    padding-top: 80px;
+  }
+}
+.profile h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #341E12;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 800px) {
+  .profile h2 {
+    font-size: 24px;
+  }
+}
+.profile > img {
+  max-width: 140px;
+  margin-bottom: 20px;
+}
+.profile > span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.profile > p {
+  margin-bottom: 40px;
+  line-height: 1.8rem;
+}
+.profile .sns {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 800px) {
+  .profile .sns {
+    margin-bottom: 80px;
+  }
+}
+.profile .sns img {
+  max-width: 80px;
+}/*# sourceMappingURL=style.css.map */

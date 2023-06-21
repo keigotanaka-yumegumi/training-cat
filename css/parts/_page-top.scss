@@ -1,0 +1,38 @@
+@import "../global/variables";
+#footer{
+
+  .page_top{
+    width: 70px;
+    height: 70px;
+    border-radius:50%;
+    background: $color-tea;
+    position: absolute;
+    top: -50px;
+    right: 40px;
+
+    &:hover{
+      background:$color-yellow-border;
+    }
+
+    .page_top--inner{
+      display: inline-block;
+
+      &::before{
+        content:"";
+        background-image:url("../image/cursor.png");
+        background-repeat: no-repeat;
+        display: inline-block;
+        margin: 10px auto 0 auto;
+        height: 1.5rem;
+        width: 2rem;
+        vertical-align: middle;
+      }
+    }
+
+    span{
+      color:$color-white;
+      font-size: 12px;
+      display: inline-block;
+    }
+  }
+}

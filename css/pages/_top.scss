@@ -1,1 +1,445 @@
 @import "../global/variables";
+
+.title{
+  max-width: 1084px;
+  display: flex;
+  align-items: flex-end;
+  margin: 100px auto 40px auto;
+
+  img{
+    margin-right: 20px;
+  }
+
+  .title--inner{
+    width: 100%;
+    border-bottom: 2px solid $color-yellow-border;
+    display: flex;
+    padding-bottom: 7px;
+
+    h2{
+      width: 90%;
+      font-size:30px;
+      font-weight: bold;
+      @media screen and (max-width:800px){
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+/* ===============================================
+# お知らせ
+=============================================== */
+.news--list{
+  max-width: 1084px;
+  margin: 0 auto;
+
+  li{
+    display: flex;
+    align-items: center;
+    border-top:dotted 2px $color-yellow-border;
+    padding: 22px 0;
+
+    @media screen and (max-width:800px){
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &:last-child{
+      border-bottom:dotted 2px $color-yellow-border;
+      margin-bottom: 100px;
+    }
+
+    time{
+      @media screen and (max-width:800px){
+        margin-bottom: 10px;
+      }
+    }
+
+    .icon{
+      width: 92px;
+      text-align: center;
+      margin:0 15px 0 22px;
+      padding: 4px 0;
+
+      @media screen and (max-width:800px){
+        margin: 0 0 10px 0;
+      }
+
+      span{
+        font-size:12px;
+      }
+    }
+
+    .icon-red{
+      background:$color-red;
+      span{
+        color: $color-white;
+      }
+    }
+    .icon-cream{
+      background: $color-cream;
+      span{
+        color: $color-tea;
+      }
+    }
+  }
+}
+
+/* ===============================================
+# おすすめ商品
+=============================================== */
+.recommendation--list{
+  max-width: 1084px;
+  display: flex;
+  margin: 0 auto;
+  gap: 20px;
+  // position: relative;// 新商品リボン用（.is-new）
+
+  @media screen and (max-width:800px){
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    flex-grow: 1;
+    width: calc(100% / 3 - 40px);
+    padding: 15px 20px;
+    border: solid 1px $color-gray;
+    position: relative;// 新商品リボン用（.new）
+
+    @media screen and (max-width:800px){
+      width: 100%;
+    }
+
+    ///////  liに「.is-new」追加で、左上角にラベル  ///////
+    .new-ribbon{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 89px;
+      height: 91px;
+      overflow: hidden;
+    }
+
+    .new{
+      display: inline-block;
+      position: absolute;
+      padding: 7px 0;
+      left: -43px;
+      top: 17px;
+      width: 160px;
+      text-align: center;
+      background:$color-red;
+      color: $color-white;
+      transform: rotate(-45deg);
+    }
+    ////////////////////////////////////////////////////////
+
+    img{
+      max-width: 318px;
+      max-height:190px;
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 30px;
+
+      @media screen and (max-width:800px){
+        max-width: 100%;
+        max-height: 400px;
+      }
+      @media screen and (max-width:600px){
+        max-height: 250px;
+      }
+    }
+
+    h3{
+      font-size: 18px;
+      padding-bottom: 7px;
+      margin-bottom: 20px;
+      border-bottom:dotted 2px $color-tea;
+    }
+
+    > p{
+      line-height:1.2rem;
+    }
+
+    .text{
+      font-size: 14px;
+      height: 100%;
+    }
+
+    .fee{
+      text-align: right;
+      font-weight: bold;
+      margin-bottom: 10px;
+
+      span{
+        font-size:12px;
+        font-weight: normal;
+      }
+    }
+
+    .btn{
+      border: solid 1px $color-tea;
+      text-align: center;
+      border-radius:5px;
+
+      &:hover{
+        background:$color-cream;
+        border: solid 1px $color-yellow;
+      }
+
+      a{
+        font-size:14px;
+        font-weight: bold;
+        display: block;
+        padding: 15px 0;
+        color: $color-tea;
+
+        span{
+
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          border-top: solid 2px $color-tea;
+          border-right: solid 2px $color-tea;
+          transform:rotate(45deg);
+          margin-left: 5px;
+        }
+      }
+    }
+
+    ///////  liに「.is-new」追加で、左上角にラベル  ///////
+    &.is-new{
+
+      &::before{
+        content: "";
+        top: 0;
+        left: 0;
+        border-bottom: 5rem solid transparent;
+        border-left: 5rem solid $color-red;
+        position: absolute;
+        z-index: 100;
+      }
+      &::after{
+        content: "新商品";
+        display: block;
+        top: 20px;
+        left: 4px;
+        position: absolute;
+        transform: rotate(-45deg);
+        color: $color-white;
+        z-index: 101;
+      }
+    }
+    ///////////////////////////////////////////////////////
+  }
+}
+
+/* ===============================================
+# 商品カテゴリー
+=============================================== */
+.category{
+
+  .category-list{
+    max-width: 1084px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @media screen and (max-width:800px){
+      flex-direction: column;
+      align-items: center;
+    }
+
+    li{
+      width: calc(100% / 3 - 40px);
+      border: solid 1px $color-gray;
+      flex-grow: 1;
+
+      @media screen and (max-width:800px){
+        width: 100%;
+      }
+
+      &:hover{
+        background:$color-cream;
+        border: solid 1px $color-yellow;
+      }
+
+      &:last-child{
+        border: none;
+      }
+
+      a{
+        display: block;
+
+        div{
+          display: flex;
+          align-items: center;
+    
+          img{
+            max-width: 120px;
+          }
+          p{
+            flex-grow: 1;
+            font-size: 18px;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ===============================================
+# 委託販売先
+=============================================== */
+.consignment{
+  padding: 90px 20px 110px 20px;
+  background: $color-cream;
+  @media screen and (max-width:800px){
+    padding: 80px 20px;
+  }
+
+  > h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color:$color-tea;
+    margin-bottom: 40px;
+
+    @media screen and (max-width:800px){
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+  }
+
+  > p{
+    text-align: center;
+    margin-bottom: 80px;
+    line-height: 1.8rem;
+
+    @media screen and (max-width:800px){
+      margin-bottom: 50px;
+    }
+  }
+
+  .consignment--list{
+    max-width: 1084px;
+    margin: 0 auto;
+
+    li{
+      display: flex;
+      margin-bottom: 40px;
+
+      @media screen and (max-width:800px){
+        flex-direction: column;
+        margin-bottom: 30px;
+      }
+      &:last-child{
+        @media screen and (max-width:800px){
+          margin-bottom: 0;
+        }
+      }
+
+      img{
+        max-width:440px;
+        margin-right: 20px;
+
+        @media screen and (max-width:800px){
+          margin-right: 0;
+          margin-bottom: 20px;
+          max-width: 100%;
+        }
+      }
+
+      > div{
+        flex-grow: 1;
+      }
+
+      h3{
+        font-size:20px;
+        font-weight: bold;
+        background: $color-tea;
+        color: $color-white;
+        height: 44px;
+        padding-top: 12px;
+        padding-left: 20px;
+        margin-bottom: 30px;
+
+        @media screen and (max-width:800px){
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+      }
+
+      p{
+        margin-bottom: 1.2rem;
+        @media screen and (max-width:800px){
+          font-size: 14px;
+        }
+
+        span{
+          font-weight:bold;
+          display: inline-block;
+          width: 100px;
+        }
+      }
+    }
+  }
+}
+
+/* ===============================================
+# プロフィール
+=============================================== */
+.profile{
+  padding-top: 90px;
+  text-align: center;
+  @media screen and (max-width:800px){
+    padding-top: 80px;
+  }
+
+  h2{
+    font-size:30px;
+    font-weight: bold;
+    color:$color-tea;
+    margin-bottom: 40px;
+    @media screen and (max-width:800px){
+      font-size: 24px;
+    }
+  }
+
+  > img{
+    max-width: 140px;
+    margin-bottom: 20px;
+  }
+
+  > span{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  > p{
+    margin-bottom: 40px;
+    line-height: 1.8rem;
+  }
+
+  .sns{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 100px;
+    @media screen and (max-width:800px){
+      margin-bottom: 80px;
+    }
+
+    img{
+      max-width: 80px;
+    }
+  }
+}

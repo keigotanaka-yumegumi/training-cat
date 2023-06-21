@@ -6,9 +6,10 @@
   border-radius: 50%;
   background: $color-tea;
   position: fixed;
-  right: 45px;
+  right: 40px;
   bottom: 45px;
   display: none;
+  z-index: 1000;
 
   @media screen and (max-width:800px){
     display: block;
@@ -16,6 +17,7 @@
 
   &:hover{
     cursor:pointer;
+    background:$color-yellow-border;
   }
 
   > div{
@@ -29,6 +31,7 @@
       height: 2px;
       background: $color-white;
       margin-bottom: 7px;
+      transition: .3s;
     }
   }
 
@@ -38,5 +41,25 @@
     position: absolute;
     top: 43px;
     left: 16px;
+  }
+
+  &.is-open{
+    span{
+      &:first-of-type{
+        transform: rotate(45deg);
+        position: absolute;
+        top: 9px;
+        transition: .3s;
+      }
+      &:nth-of-type(2){
+        display: none;
+      }
+      &:last-of-type{
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 9px;
+        transition: .3s;
+      }
+    }
   }
 }

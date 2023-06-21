@@ -13,15 +13,13 @@
     @media screen and (max-width:800px){
       flex-direction: column;
       gap: 0;
+      padding-bottom: 30px;
     }
 
     .logo{
-      flex-grow: 1;
-      max-width: 424px;
-      width: 40%;
-
       @media screen and (max-width:800px){
         width: 100%;
+        padding: 0 20px;
       }
 
       img{
@@ -30,10 +28,9 @@
     }
 
     .meaning{
-      flex-grow: 1;
-      width: 60%;
       @media screen and (max-width:800px){
         width: 100%;
+        padding: 0 20px;
       }
 
       > div{
@@ -47,6 +44,16 @@
           padding: 30px 0;
         }
 
+        @media screen and (max-width:800px){
+          max-width: 100%;
+          padding: 40px 0;
+        }
+
+        @media screen and (max-width:800px){
+          max-width: 100%;
+          padding: 40px 0;
+        }
+
         p{
           font-size: 20px;
           line-height: 2rem;
@@ -58,7 +65,7 @@
   .header--last{
     background: $color-cream;
     @media screen and (max-width:800px){
-      margin-bottom:80px;
+      padding-bottom: 30px;
     }
 
     picture{
@@ -96,6 +103,13 @@
             position: absolute;
             top: 18px;
             left: 18px;
+          }
+
+          &:hover{
+
+            &::before{
+              content: url(../image/ico_paw_o.svg);
+            }
           }
         }
       }
