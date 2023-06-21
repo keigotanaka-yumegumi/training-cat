@@ -129,6 +129,11 @@ a:hover {
   font-size: 20px;
   line-height: 2rem;
 }
+@media screen and (max-width: 800px) {
+  #header .header--first .meaning > div p {
+    font-size: 16px;
+  }
+}
 #header .header--last {
   background: #F5EFD7;
 }
@@ -721,16 +726,17 @@ main.is-open,
 /* ===============================================
 # 委託販売先
 =============================================== */
-.consignment {
+.consignment > div {
+  width: 100%;
   padding: 90px 20px 110px 20px;
   background: #F5EFD7;
 }
 @media screen and (max-width: 800px) {
-  .consignment {
+  .consignment > div {
     padding: 80px 20px;
   }
 }
-.consignment > h2 {
+.consignment > div > h2 {
   text-align: center;
   font-size: 30px;
   font-weight: bold;
@@ -738,79 +744,78 @@ main.is-open,
   margin-bottom: 40px;
 }
 @media screen and (max-width: 800px) {
-  .consignment > h2 {
+  .consignment > div > h2 {
     font-size: 24px;
     margin-bottom: 30px;
   }
 }
-.consignment > p {
+.consignment > div > p {
   text-align: center;
   margin-bottom: 80px;
   line-height: 1.8rem;
 }
 @media screen and (max-width: 800px) {
-  .consignment > p {
+  .consignment > div > p {
     margin-bottom: 50px;
   }
 }
-.consignment .consignment--list {
+.consignment > div .consignment--list {
   max-width: 1084px;
   margin: 0 auto;
 }
-.consignment .consignment--list li {
+.consignment > div .consignment--list li {
   display: flex;
   margin-bottom: 40px;
 }
 @media screen and (max-width: 800px) {
-  .consignment .consignment--list li {
+  .consignment > div .consignment--list li {
     flex-direction: column;
     margin-bottom: 30px;
   }
 }
 @media screen and (max-width: 800px) {
-  .consignment .consignment--list li:last-child {
+  .consignment > div .consignment--list li:last-child {
     margin-bottom: 0;
   }
 }
-.consignment .consignment--list li img {
+.consignment > div .consignment--list li img {
   max-width: 440px;
   margin-right: 20px;
 }
 @media screen and (max-width: 800px) {
-  .consignment .consignment--list li img {
+  .consignment > div .consignment--list li img {
     margin-right: 0;
     margin-bottom: 20px;
     max-width: 100%;
   }
 }
-.consignment .consignment--list li > div {
+.consignment > div .consignment--list li > div {
   flex-grow: 1;
+  min-width: 560px;
 }
-.consignment .consignment--list li h3 {
+.consignment > div .consignment--list li h3 {
   font-size: 20px;
   font-weight: bold;
   background: #341E12;
   color: #fff;
-  height: 44px;
-  padding-top: 12px;
-  padding-left: 20px;
+  padding: 12px 20px 12px 20px;
   margin-bottom: 30px;
 }
 @media screen and (max-width: 800px) {
-  .consignment .consignment--list li h3 {
+  .consignment > div .consignment--list li h3 {
     font-size: 16px;
     margin-bottom: 20px;
   }
 }
-.consignment .consignment--list li p {
+.consignment > div .consignment--list li p {
   margin-bottom: 1.2rem;
 }
 @media screen and (max-width: 800px) {
-  .consignment .consignment--list li p {
+  .consignment > div .consignment--list li p {
     font-size: 14px;
   }
 }
-.consignment .consignment--list li p span {
+.consignment > div .consignment--list li p span {
   font-weight: bold;
   display: inline-block;
   width: 100px;
