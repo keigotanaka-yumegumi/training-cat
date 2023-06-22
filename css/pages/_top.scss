@@ -351,46 +351,52 @@
 
         img{
           max-width:440px;
+          width: 45%;
           margin-right: 20px;
 
           @media screen and (max-width:800px){
             margin-right: 0;
             margin-bottom: 20px;
             max-width: 100%;
+            width: 100%;
           }
         }
 
         > div{
           flex-grow: 1;
-          min-width: 560px;
-        }
 
-        h3{
-          font-size:20px;
-          font-weight: bold;
-          background: $color-tea;
-          color: $color-white;
-          padding: 12px 20px 12px 20px;
-          margin-bottom: 30px;
+          h3{
+            font-size:20px;
+            font-weight: bold;
+            background: $color-tea;
+            color: $color-white;
+            padding: 12px 20px 12px 20px;
+            margin-bottom: 30px;
+            @media screen and (max-width:800px){
+              font-size: 16px;
+              margin-bottom: 20px;
+            }
+          }
 
-          @media screen and (max-width:800px){
-            font-size: 16px;
-            margin-bottom: 20px;
+          .detail{
+            display: flex;
+
+            span{
+              font-weight:bold;
+              min-width: 6rem;
+            }
+
+            p,a{
+              word-break: break-all;
+              margin-bottom: 1.2rem;
+              @media screen and (max-width:800px){
+                font-size: 14px;
+              }
+            }
           }
         }
 
-        p{
-          margin-bottom: 1.2rem;
-          @media screen and (max-width:800px){
-            font-size: 14px;
-          }
 
-          span{
-            font-weight:bold;
-            display: inline-block;
-            width: 100px;
-          }
-        }
       }
     }
   }

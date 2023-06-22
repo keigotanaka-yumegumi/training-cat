@@ -30,6 +30,10 @@ time, mark, audio, video {
 	box-sizing:border-box;/*boxの幅・高さにpaddingとborderを含む*/
 }
 
+html,body,header,main,footer{
+    width: 100%;
+}
+
 body {
     line-height:1;
 }

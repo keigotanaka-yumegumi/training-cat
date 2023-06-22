@@ -780,6 +780,7 @@ main.is-open,
 }
 .consignment > div .consignment--list li img {
   max-width: 440px;
+  width: 45%;
   margin-right: 20px;
 }
 @media screen and (max-width: 800px) {
@@ -787,13 +788,13 @@ main.is-open,
     margin-right: 0;
     margin-bottom: 20px;
     max-width: 100%;
+    width: 100%;
   }
 }
 .consignment > div .consignment--list li > div {
   flex-grow: 1;
-  min-width: 560px;
 }
-.consignment > div .consignment--list li h3 {
+.consignment > div .consignment--list li > div h3 {
   font-size: 20px;
   font-weight: bold;
   background: #341E12;
@@ -802,23 +803,26 @@ main.is-open,
   margin-bottom: 30px;
 }
 @media screen and (max-width: 800px) {
-  .consignment > div .consignment--list li h3 {
+  .consignment > div .consignment--list li > div h3 {
     font-size: 16px;
     margin-bottom: 20px;
   }
 }
-.consignment > div .consignment--list li p {
+.consignment > div .consignment--list li > div .detail {
+  display: flex;
+}
+.consignment > div .consignment--list li > div .detail span {
+  font-weight: bold;
+  min-width: 6rem;
+}
+.consignment > div .consignment--list li > div .detail p, .consignment > div .consignment--list li > div .detail a {
+  word-break: break-all;
   margin-bottom: 1.2rem;
 }
 @media screen and (max-width: 800px) {
-  .consignment > div .consignment--list li p {
+  .consignment > div .consignment--list li > div .detail p, .consignment > div .consignment--list li > div .detail a {
     font-size: 14px;
   }
-}
-.consignment > div .consignment--list li p span {
-  font-weight: bold;
-  display: inline-block;
-  width: 100px;
 }
 
 /* ===============================================
